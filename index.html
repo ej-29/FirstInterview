@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>First Interview</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="13c0487e-87cc-80e3-8f98-e6140ecbce9b" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📝</span></div><h1 class="page-title">First Interview</h1><p class="page-description"></p></header><div class="page-body"><figure id="3c5b2e1f-518c-4fc5-af13-be581e05de3c" class="image"><a href="First%20Interview%2013c0487e87cc80e38f98e6140ecbce9b/me.jpg"><img style="width:192px" src="First%20Interview%2013c0487e87cc80e38f98e6140ecbce9b/me.jpg"/></a></figure><p id="8f7e9c9e-2762-4de9-a2e3-8926f71aa24c" class=""><strong>1. 엔터에 입성하게 된 계기</strong></p><p id="cd172e6f-8540-46c5-9c5e-9098ff9a0af5" class="">엔터테인먼트 산업에서 일하는 사람이 된 계기는,</p><p id="423375b6-6238-4f66-a821-1d8bff38680e" class="">어릴 때부터 친구들과 놀기보다는 TV를 보거나 음악을 들으며 북클릿을 보는 것이 취미일 정도로 다양한 미디어 문화 콘텐츠를 좋아했습니다.</p><p id="7553cbc8-563c-4b51-a7eb-d8de361f4c40" class="">
+</p><p id="b8036624-a735-4183-a7df-73d7392ceaaa" class="">점차 성장과정에서 예술이라는 틀 안에서 장르만 조금씩 바꼈을 뿐 항상 순수예술과 상업예술을 넘나들며 제가 흥미를 느끼고 관심을 느끼고 꾸준히 좋아하고 디깅해왔던 분야는 예술이었습니다.</p><p id="b3f8c49f-cb6c-41b4-a9d5-1247c6b6a961" class="">
+</p><p id="b3e59fbe-8a68-4972-8536-35b40dadb707" class="">사춘기가 접어든 10대가 되고, 인생에 대한 방향과 목표를 진작에 &#x27;자아실현&#x27;으로 정해두었던 저는 그 시기부터 부단히 진로와 직업에 대해 고민을 했었고, 그 기반에는 항상 &#x27;음악&#x27;이 가장 우선순위로 크게 영향을 받았습니다.</p><p id="59e4824a-e634-41b8-83b6-6e6f94bc86e9" class="">
+</p><p id="1f5cfe82-8a40-4d26-bd0c-ff72b5054ddf" class="">정확히는 17살때부터 음악을 하는 사람(뮤지션-&gt;작곡가 등의 형태로)을 꿈꿨습니다.</p><p id="e3e63664-d5d6-44dd-bb20-b0709f8785bb" class="">
+</p><p id="f60c940d-3413-4d19-9285-fb58f839c9c1" class="">음악 플레이어로서의 꿈을 계속 꿈꾸다가 20대 후반부터 꿈의 형태를 조금 바꾸게 되었는데</p><p id="e0a9243b-c5e6-41bd-9e44-118e7eb76129" class="">
+</p><p id="413d4ad7-6be8-4725-a021-3af278dea1f2" class="">그 이유 중 하나는 내가 이상적으로 꿈꾸는 플레이어로서의 내 모습이 더이상 대입이 잘 되지 않았고,</p><p id="e9b079b1-71c4-47fc-a832-01ef39f8357d" class="">나이도 어느덧 제대로 취업을 하여 자리를 잡아야할 시기, 어린 나이가 아니기에 스타성과 상품성이 없다고 생각하였고 (그당시까지만 하더라도 뮤지션을 어려야 상품성이 있다고 스스로 판단하고 어린 나이에 대한 강박이 심했습니다.)</p><p id="e53fb9bc-bed3-4213-a599-f99ac4c64b52" class="">마지막으로 내가 기대하는 재능을 제가 갖고있지 않았기 때문입니다.</p><p id="fe8f0c09-0669-470a-ae3f-21c9af62cc26" class="">
+</p><p id="47145aa3-7a34-4ba7-af20-5ff70fd05c43" class="">그렇게 진로의 형태를 구체적으로 설계하던 중, 어렸을 때 어렴풋이 들었던 A&amp;R이라는 직무를 떠올렸고 당시 구글과 네이버에 A&amp;R을 서치해서 나오는 웹페이지를 모조리 읽었습니다.</p><p id="b648ed67-e27d-479d-869b-f2e176ade4b6" class="">
+</p><p id="5053bdc7-6488-4350-9a75-21ce2dce30b0" class="">내가 &quot;생각했던 가장 이상적으로 생각하는 직무는 이것이다&quot;라는 생각이 들었고 그렇게 결심했던 28살부터 본격적으로 A&amp;R을 준비하게 되었습니다.</p><p id="7f640e03-96f7-44aa-813b-390f76522b2d" class="">
+</p><p id="ec32ebce-11fe-4400-babe-83fb5160fde4" class="">일단 기본적으로 워낙 어릴때부터 음악/영화/문학/이미지/사진/영상/패션 등을 섭렵해왔기 때문에 이를 바탕으로 조건적인 부분만 개선하면 되었었는데</p><p id="e98cfe43-4c6a-4244-b296-740cb98d7ab8" class="">
+</p><p id="a7cb5cc0-a0d7-4075-ad9d-a908cf5cc124" class="">인터넷을 모조리 뒤져보아도 엔터테인먼트로의 취업은 한계가 보였습니다. 따라서 발품을 팔아 그 당시 A&amp;R을 레슨해주는 프로듀서 선생님을 찾아 트레이닝을 받게 되었고,</p><p id="a39ca813-9ba0-40de-b3c4-94a7e8b3fb4e" class="">엔터 A&amp;R 취업에 가장 핵심이 되는 조건들을 병행하여 준비해나갔습니다.</p><p id="cdee143d-5bd2-4345-b50f-6e37efc9854f" class="">(여기에서 말하는 조건은 첫번째 4년제 학사, 두번째 해외경험(혹은 네이티브 수준의 영어), 세번째 어린나이, 네번째 엔터 시스템 경험, 혹은 직접적인 실무경험이었습니다.)</p><p id="4ebc231b-7b96-44e8-ae71-9af44ceb0034" class="">
+</p><p id="b1c99c6a-b507-46be-b88f-fcd4c3a5c146" class="">이미 지나와서 바꿀 수 없는 해외경험이나 어린나이를 제외하고는 모두 노력해서 끌어올렸습니다.</p><p id="723ecc46-8af0-45e6-b572-e216674b842a" class="">1. 4년제 학사를 땄고,</p><p id="05024d0d-be2d-451b-9b64-3c20d878385f" class="">2. 실무경험을 쌓기 위해 발품팔아 노력해서 채웠고,</p><p id="a9fa51e3-7ab5-4f8c-93c4-645f75166903" class="">3. 기획/제작력을 트레이닝받으며 향상 시켰으며,</p><p id="a86c28ee-5b23-4c66-ad77-8703f47f31af" class="">4. 엔터도 회사이기때문에 문과생이라면 가지고 있어야할 토익, 스피킹 자격증(OPIc), 컴퓨터활용능력 따위의 자격증들을 땄고</p><p id="bcf0fbe1-9ff9-4be2-a2eb-d4ce9d6b4af5" class="">
+</p><p id="5a948380-5bb8-4041-b5d6-6cce02f119e4" class="">이를 바탕으로 자소서와 포트폴리오를 준비하여 당시 2020년 50군데가 넘는 곳을 지원하였고 해외 대형 엔터테인먼트 a사에 합격했습니다.</p><p id="eec5ef4f-9ab7-4a2f-8fe3-05bd521a5851" class="">
+</p><p id="e8224d9b-1e73-4ea1-a6b5-1dd34b9076fa" class="">실력과 열정, 성실성을 믿어주었던 프로듀서(레슨 선생님)의 밑에서 파트너 A&amp;R로서 경험을 쌓으며 A&amp;R적 감각을 놓지 않으려고 노력을 하면서 30대 초반의 시기들을 지냈습니다.</p><p id="77cea2fa-7ba8-4470-a801-70e2ce71792f" class="">
+</p><p id="ccae27fc-cccd-4acc-a386-e5f42a64d14a" class="">22년, 저처럼 비전공자이면서 A&amp;R을 꿈꾸는 친구들을 위해 방향을 잡아주는 역할을 하고 싶다라는 생각을 예전부터 하고 있었기에 조금씩 정리해놓았던 노하우들을 모아</p><p id="451fe9d7-03f2-4bf7-9af2-2661dea8ca51" class="">&#x27;A&amp;R 취업 준비법&#x27;을 작성하여 포스타입 채널에 올리게 되었고, 조금씩 입소문을 타면서 제 노하우들을 모두 녹여낸 포스팅들을 업로드 하였습니다.</p><p id="cabb594d-856d-459f-9872-cba67418d2c6" class="">
+</p><p id="c917016c-328d-4ecb-850e-ac47426e93f1" class="">23년, 이를 바탕으로 1:1 과외와 24년 클래스를 바탕으로 점차적인 A&amp;R 에듀 콘텐츠 크리에이터로서 성장·활동하게 되었고</p><p id="9e85041a-1676-4b63-a257-625b89957f8b" class="">
+</p><p id="16d39149-6cc5-451c-8567-04cb984dbc03" class="">24년 3월 Blondies라는 이름의 A&amp;R과 에듀 서비스를 제공하는 사업체를 만들어 운영하게 되었습니다.</p><p id="b8f43b5b-842a-49bd-a5b4-098af6bdde7e" class="">
+</p><p id="9565a21c-d8af-472f-a9fe-bdd54767ccc5" class="">
+</p><p id="15f923a9-9758-4be6-a468-15f8d1a434d3" class=""><strong>2. 회사에서 하던 일</strong></p><p id="73b38bf6-065d-47d7-9cee-79e8d0e5864d" class="">제가 직접적으로 A&amp;R로서 일을 한 것은 프로듀서 김준우 선생님 아래에서 일을 했던 것으로 이를 중심으로 말씀드리겠습니다.</p><p id="0e28bdb6-3e74-4685-bc54-2f7d8cca4634" class="">
+</p><p id="51295e2f-9563-48fc-988c-2da0811c8bfa" class="">지금도 그렇지만 제가 했던 프리랜서 A&amp;R 현재까지도 국내에 저만 갖고 있는 약력으로 거의 전무후무한 위치입니다.</p><p id="8714bdcc-4956-4675-b307-a979b1cf4769" class="">
+</p><p id="c674f35e-30a6-48a6-b712-45d4a54e3417" class="">(보통은 A&amp;R은 엔터테인먼트의 A&amp;R팀에 A&amp;R 신입으로 취업해야만 가능한 직무입니다.)</p><p id="c9aded53-3a58-48db-bba8-4d503bd7f0ff" class="">
+</p><p id="38e8dec9-2fc9-44ed-836b-a6689f86dd1a" class="">아무튼 프로듀서 파트너로서의 A&amp;R 활동의 내용은 요약하자면</p><p id="6f4207cf-92ef-48aa-b4ea-dfb2850cdbf0" class="">
+</p><p id="5a33b6ee-52c1-4adc-87ed-543859a19057" class="">선생님이 외주 받은 내용들을 바탕으로 컨셉을 잡아 기획/제작하는 일이었습니다.</p><p id="8cf836df-23b2-4b47-9b0f-b55e1fa17505" class="">
+</p><p id="f9e4c8fc-f47c-4990-9132-db48af3f9701" class="">예를들어 보통의 경우, 아티스트의 곡을 받기위해 엔터 회사에서 여러 작곡가에게 메일을 뿌립니다.</p><p id="80d8559e-c2b1-4d69-a0f2-0aee9dd54c8f" class="">
+</p><p id="3b6542a4-2280-42b3-a1bc-b5fab3e755ba" class="">&quot;우리 이번에 A가 첫 솔로앨범 낼건데요 ~~한 곡을 내고 싶습니다. 이에 맞는 곡 부탁합니다.&quot; -&gt; 보통 이런 걸 리드라고 함</p><p id="c66917c8-7d0f-4cec-899c-371eb12876bd" class="">
+</p><p id="be2cfcb1-107d-4bcb-9a17-283e5923bf5e" class="">리드의 내용을 바탕으로 A&amp;R로서의 제 역할은 프로듀서 쌤이 &#x27;팔릴 만한&#x27; 곡을 만들 수 있도록 도와드려야 하는데</p><p id="99ce4c9a-47e4-4fa9-baae-47220339d8da" class="">
+</p><p id="02918648-9811-4680-98fa-c37a6abcf72f" class="">첫째, 이 아티스트의 성향과 장점, 단점 등 사전 분석을 할 것</p><p id="1384b5fc-0426-4880-bbce-986c52da5cd1" class="">둘째, 이 아티스트가 원하는 것과 회사가 원하는 것을 인터뷰와 회의를 통해 니즈를 확실하게 파악할 것,</p><p id="6a932efb-d02d-4c24-ad2a-4dc1c9efdd29" class="">셋째, 이를 조율하여 가장 최적의 컨셉을 제안할 것</p><p id="de3c9d54-0cc0-4369-85e6-38906f6212a6" class="">마지막, 이를 바탕으로 완벽한 기획안을 만들어 프로듀서 쌤에게 제공하고</p><p id="0c3b9e8e-ddd4-4ae5-a5a8-1e06ddd5a808" class="">
+</p><p id="dac4c88a-91c8-4397-978d-a07612d166d9" class="">이를 바탕으로 쌤이 곡을 만들어 완성하면 엔터에 곡을 주고, 회사와 아티스트가 ok하면 이 곡을 사게 되는</p><p id="deccee62-181c-4765-91f5-5f20552af0dc" class="">
+</p><p id="40dab582-041a-452c-9d48-e8c789742fb0" class="">이런 시스템이었습니다.</p><p id="16f810bf-1e33-4f10-a543-e9635b1eb231" class="">한마디로 팔릴 수 있게 도와주는 파트너이자 비서라고 할 수 있죠.</p><p id="ccdc4b8c-26c6-41d9-a6a2-28f50cd9ffac" class="">
+</p><p id="a2d4e96e-6754-4fa2-8500-07619dc8650d" class="">그 이외에도 선생님이 프로듀싱하는 아티스트의 앨범이 있으면 총괄로 제가 맡아 위의 과정과 똑같은 형태로 기획안을 만들고, 이를 잘 표현해줄 수 있는 스태프들을 컨택하여 스케쥴을 잡고,</p><p id="0a5165e0-f17b-4a26-b57c-0e23a95035f9" class="">
+</p><p id="1b3c444b-f1b4-4d65-b8f7-65dc9923a48a" class="">선생님과 아티스트와 같이 음악 디테일 디렉팅을 잡는 등의 제작적인 측면의 역할도 참여했습니다.</p><p id="a9ad40c0-16cf-4304-a4d3-2401ce07594e" class="">
+</p><p id="097d9b6f-f239-4d2f-bdaf-b366a8246b89" class="">따라서 A&amp;R은 한마디로 말하자면 종합 아티스틱 매니저라고 보시면 될 것 같습니다.</p><p id="c08fd9ac-dedb-4e65-beb6-c33ed49f7db9" class="">
+</p><p id="2736aa7f-fe4d-414a-bff7-67e3dc207390" class=""><strong>3. 회사 내부에서 이동 가능한지(가능하다고 듣긴 했는데 부서 제약이 있다든가)</strong></p><p id="4518c643-1540-4c5f-9edd-3457c9e62fea" class="">
+</p><p id="0c992606-dec3-4fdc-8f77-cb08a59133a0" class="">사실상 A&amp;R은 거의 불가능합니다.</p><p id="c3bda023-e47a-4fd6-8043-5ca072e63697" class="">엔터테인먼트의 가장 핵심이 되는 부서이기 때문에 전문성이 가장 요구되는 곳으로,</p><p id="1345b202-68d1-484c-875d-5f14a59e1550" class="">A&amp;R로서의 커리어 실무가 없다면 부서 내의 이동은 절대적으로 불가합니다.</p><p id="1cf3901b-7721-4be8-a468-b798babe4475" class="">(만약 뭐 인맥이나 추천으로 꽂아넣어서 일을 한다고 하더라도 얘가 실무적으로 도움이 안되거나 일을 못하면 다음부턴 안씁니다. 그만큼 중요한 자리라서요.)</p><p id="f0b133e4-2247-4275-bc24-f986e97ac19a" class="">
+</p><p id="f872426d-4d07-4c05-a8c8-fdbb9f4f6be9" class=""><strong>4. 독립한 이유</strong></p><p id="f443d23a-f334-45ba-9de0-a8e56e418cc2" class="">사실상 선생님이 프로듀서를 그만두시면서 자연스럽게 독립하게 되었습니다.</p><p id="6976249a-acea-4fe8-b31a-b2f38a2a4eb5" class="">스스로 제대로된 프로젝트를 만들어보고 싶다는 큰 포부도 있고요.</p><p id="0b2f0d71-b7d9-49e2-950f-91f0f9396221" class="">아직 밑그림조차 실천하지 못했는데, 사실 규모는 작아도 제가 구상하고 있는 것이 아직 기존에 누구도 하지 않았던 것들이라 독립이 어찌보면 필연이었습니다.</p><p id="6d1213a0-8690-4d90-b2c0-53150f0ed967" class="">
+</p><p id="3c883c81-99bc-46e7-aa1e-1328e4ea22e4" class=""><strong>5. 엔터테인먼트 업계의 장단점</strong></p><p id="98a4e07e-6ab0-419a-9015-63b83207d1d1" class="">장점: 저처럼 꿈과 포부가 있는 분들은 자신의 예술적 감성과 예술적 데이터베이스를 발휘하여 아티스트를 빛냈을 때에 더할나위 없는 보람을 느낌 + 더불어 포트폴리오가 쌓여가는 재미를 느낄 수 있음</p><p id="ad79b633-04cc-4e4a-9b9d-46b6bea6a29f" class="">
+</p><p id="06a1faf4-a6a5-442e-8a5d-407683a2b7b2" class="">단점: 연봉, 워라밸, 소수가 이끄는 구조, 적성이 안맞을 시 회사를 다니는 데에 이유와 가치를 느끼지 못함, 인간혐오 등</p><p id="d4d7c310-ee74-4457-80ab-0422f469ec11" class="">
+</p><p id="8fd639e4-7920-4850-ab41-5f2565a9a037" class=""><strong>6. 어떤 사람(성격)에게 취업 추천하는지</strong></p><p id="68876637-c6cc-4b1a-bfcf-8873db20a04b" class="">① 엔터테인먼트 산업에 대한 &quot;순수한&quot; 열정이 있는 사람</p><p id="77bb1261-a2b6-4623-ac6f-fb93ea2bc7a4" class="">② 엔터테인먼트 산업에 대한 이해도가 있는 사람</p><p id="ac0166b8-3a62-4ee4-8233-d5481fbdcb3e" class="">③ 엔터테인먼트 산업에서 무언가 한 획을 긋는 사람이 되고 싶다는 포부와 강한 의지가 있는 사람</p><p id="702b4ab4-9744-4351-815a-93f76d2b0239" class="">④ 자신의 삶의 목표가 &#x27;자아실현&#x27;에 있고, 이 자아실현이 엔터테인먼트 산업과 관련이 있고, 마지막으로 이를 이루는 것에 행복과 가치감을 느끼는 사람</p><p id="d4bf6406-af9b-41bd-9b68-30457e950207" class="">⑤ 예술(음악/사진/영상/영화/문학 등)에 조예가 깊은 사람</p><p id="bd5e587e-1829-46c4-8f2d-d00b50d2ffd1" class="">⑥ 영미권 4년제 대학, 국내 SKY 대학 등 외적인 조건이 좋은 사람</p><p id="3d4d92b0-9de8-46e1-b5a7-bfd5da0c006a" class="">⑦ 돈에 큰 욕심이 없는 사람</p><p id="84360a3a-0bc2-4772-aa99-e26b495d3a5c" class="">
+</p><p id="c581972d-772d-4d7d-9745-18ae81d146d8" class="">성격적인 면에서 보자면</p><p id="ee395eb8-c601-470b-9e45-2fec1387b649" class="">① 커뮤니케이션 잘하는 사람</p><p id="cf9029de-64b6-4d55-8aae-aaf7bd3a2da6" class="">② 사람들의 성질을 잘 받아주는 사람</p><p id="736e8b64-7795-4e0b-8da6-ebe0887adf13" class="">③ 상대방의 니즈와 심리를 정확하게 이해하는 사람</p><p id="c42a349e-1d67-4185-bc56-2dda3803498d" class="">④ 위를 바탕으로 회사-아티스트-소비자를 모두 설득할 수 있는 논리력을 가진 사람</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
